@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "1c84266b-da18-420c-a5eb-d77eee572762",
+		"name": "mSIM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v1/HELLO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v1/HELLO",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"HELLO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/REGISTER-INSTRUCTIONS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v1/REGISTER-INSTRUCTIONS",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"REGISTER-INSTRUCTIONS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/REGISTER-PLAIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"zibuhoker\",\n\t\"password\": \"cXdlcnR5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v1/REGISTER-PLAIN",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"REGISTER-PLAIN"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/AUTH-PLAIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0ee688e0-cbcb-4131-a7da-b007ee6a426a",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"var sessid = jsonData.sessid;",
+							"",
+							"pm.environment.set(\"sessid\", sessid);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"zibuhoker\",\n\t\"password\": \"cXdlcnR5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v1/AUTH-PLAIN",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"AUTH-PLAIN"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v2/CONTACTS-GET",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Session",
+						"value": "{{sessid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v2/CONTACTS-GET",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"CONTACTS-GET"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
