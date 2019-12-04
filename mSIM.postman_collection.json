@@ -194,6 +194,123 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "v2/CONTACTS-ADD",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Session",
+						"type": "text",
+						"value": "{{sessid}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"zibuhoker@localhost\",\n\t\"name\": \"Zibuhoker\",\n\t\"group\": [\n\t\t\"General\"\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v2/CONTACTS-ADD",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"CONTACTS-ADD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v2/CONTACTS-EDIT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Session",
+						"type": "text",
+						"value": "{{sessid}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"zibuhoker@localhost\",\n\t\"name\": \"Zibu Hoker\",\n\t\"group\": [\n\t\t\"General\"\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v2/CONTACTS-CHANGE",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"CONTACTS-CHANGE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v2/CONTACTS-DELETE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Session",
+						"type": "text",
+						"value": "{{sessid}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"zibuhoker@localhost\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v2/CONTACTS-DELETE",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"CONTACTS-DELETE"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
